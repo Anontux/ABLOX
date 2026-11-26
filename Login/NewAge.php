@@ -140,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["username"] = $username;
                 $user = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM users WHERE username = '".addslashes($username)."'"));
                 $_SESSION["id"] = $user['id'];
-                header("location: /api/render.php?returnUrl=".$returnurl);
+                header("location: ".$returnurl);
                 
             } else{
                 echo "Oops! Something went wrong. Please try again later.";

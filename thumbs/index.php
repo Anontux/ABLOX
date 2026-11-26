@@ -7,6 +7,8 @@ header("Content-Type: image/png");
 
 if($usrid['thumbnail']){
 
+if($usrid['thumbnail'][0] === '/') { header('location: '.$usrid['thumbnail']); exit; }
+
 echo base64_decode($usrid['thumbnail']);
 
 }else{

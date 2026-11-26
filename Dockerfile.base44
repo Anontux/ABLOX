@@ -1,0 +1,7 @@
+FROM php:7.4-cli
+
+# mysqli is the only extension this site needs beyond the defaults, and the
+# official image already ships the build tools to compile it.
+RUN docker-php-ext-install mysqli
+
+WORKDIR /var/www/html
