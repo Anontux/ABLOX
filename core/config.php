@@ -56,6 +56,18 @@ $defaultdescription = $sitename." is SAFE for gamers! ".$sitename." is a FREE ca
 
 error_reporting(0);
 
+// Currency amounts are shown abbreviated once they get large ("1.2B+").
+function formatCurrency($amount) {
+    $amount = (int)$amount;
+    if ($amount >= 1000000000) {
+        return rtrim(rtrim(number_format($amount / 1000000000, 1, '.', ''), '0'), '.') . 'B+';
+    }
+    if ($amount >= 1000000) {
+        return rtrim(rtrim(number_format($amount / 1000000, 1, '.', ''), '0'), '.') . 'M+';
+    }
+    return number_format($amount);
+}
+
 function metatag($title, $description, $image) {
     global $sitename;
     echo '<meta property="og:site_name" content="'.$sitename.'">

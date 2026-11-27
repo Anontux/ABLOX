@@ -64,14 +64,14 @@ if($unreadmsg > 0){ echo'
 if($_USER['robux'] > 0){ echo'
                           <div id="RobuxAlert">
                             <a class="TicketsAlertIcon"><img src="/images/Robux.png" style="border-width:0px;"></a>&nbsp;
-                            <a href="/Upgrades/Robux.aspx" class="TicketsAlertCaption">'.$_USER['robux'].' '.$robuxname.'</a>
+                            <a href="/Upgrades/Robux.aspx" class="TicketsAlertCaption">'.formatCurrency($_USER['robux']).' '.$robuxname.'</a>
                           </div>
 '; }
 
 if($_USER['tix'] > 0){ echo'
                           <div id="TicketsAlert">
                             <a class="TicketsAlertIcon"><img src="/images/Tickets.png" style="border-width:0px;"></a>&nbsp;
-                            <a href="/Upgrades/Robux.aspx" class="TicketsAlertCaption">'.$_USER['tix'].' '.$tixname.'</a>
+                            <a href="/Upgrades/Robux.aspx" class="TicketsAlertCaption">'.formatCurrency($_USER['tix']).' '.$tixname.'</a>
                           </div>';
 }
 

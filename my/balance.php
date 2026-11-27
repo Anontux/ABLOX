@@ -79,8 +79,8 @@ if(!$loggedIn) {
 			</div>
 			<div class="Earnings_PeriodTotal">
 				<div class="Label">Total:</div>
-				<div class="Field"><?php echo $_USER['robux']; ?></div>
-				<div class="Field"><?php echo $_USER['tix']; ?></div>
+				<div class="Field"><?php echo formatCurrency($_USER['robux']); ?></div>
+				<div class="Field"><?php echo formatCurrency($_USER['tix']); ?></div>
 			</div>
 		</div>
 	</div>

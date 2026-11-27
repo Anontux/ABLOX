@@ -17,7 +17,7 @@ if($owned == 'yes') {header('location: /item.aspx?id='.$id); die();}
 
 //do transaction
 if($item['buywith'] == 'tix') {$currency = 'tix';} else {$currency = 'robux';}
-if($currency == 'Tickets') {
+if($currency == 'tix') {
     if($_USER['tix'] >= $item['price']) {
         $tixafterpurchase = $_USER['tix'] - $item['price'];
         mysqli_query($link, "UPDATE `users` SET `tix` = '".$tixafterpurchase."' WHERE `users`.`id` = ".$_USER['id']."; ") or die(mysqli_error($link));
